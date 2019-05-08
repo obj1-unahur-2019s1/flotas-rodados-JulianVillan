@@ -1,0 +1,27 @@
+import vehiculo.*
+
+test "corsa" {
+	
+	var corsa = new Rodados()
+	corsa.peso(1300)
+	corsa.capacidad(4)
+	assert.equals(4, corsa.capacidad())
+	
+}
+
+test "kwid" {
+	
+	var kwid = new Rodados()
+	kwid.peso(1500)
+	assert.equals(1500, kwid.peso() )
+}
+
+test "kwid2" {
+	
+	var kwid = new Rodados()
+	kwid.peso(1500)
+	
+	kwid.capacidad(4)
+	kwid.tieneGas(true)
+	assert.equals(3, kwid.capacidad())
+}
