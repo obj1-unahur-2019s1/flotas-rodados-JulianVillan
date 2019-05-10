@@ -1,0 +1,33 @@
+import dependencia.*
+import vehiculo.*
+
+
+describe "Dependecias"{
+	var cachito = (new Corsa(color = rojo))
+
+test "cultura" {
+	const cultura = (new Dependencia(empleados = 31))
+	cultura.agregarFlota(cachito)
+	cultura.agregarFlota(new Kwid(tieneTanque = true))
+	cultura.agregarFlota(new Kwid(tieneTanque = true))
+	cultura.agregarFlota(new Kwid(tieneTanque = false))
+	cultura.agregarFlota(trafic)
+	
+	trafic.interior(interiorPopular)
+	trafic.motor(motorBataton)
+	
+	assert.equals(#{cachito, kwid, corsaVerde, corsaAzul}, deporte.flota())
+	
+}
+
+
+test "deporte" {
+	const deporte = (new Dependencia(empleados = 45))
+	deporte.agregarFlota(cachito)
+	deporte.agregarFlota(kwid)
+	deporte.agregarFlota(new Corsa(color = "verde"))
+	deporte.agregarFlota(new Corsa(color = "azul"))
+}
+}
+	
+
